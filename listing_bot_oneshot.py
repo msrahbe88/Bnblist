@@ -27,7 +27,14 @@ NTFY_TOPIC = "RHBNBNEW"
 NTFY_URL = f"https://ntfy.sh/{NTFY_TOPIC}"
 
 STATE_FILE = Path(__file__).parent / "listing_state.json"
-BINANCE_EXCHANGE_INFO_URL = "https://api.binance.com/api/v3/exchangeInfo"
+
+# Binance's regular api.binance.com blocks requests from certain IP
+# locations (incl. US-hosted servers, which is what GitHub Actions
+# runners use) with an HTTP 451 error. data-api.binance.vision is
+# Binance's official market-data-only mirror -- same public endpoints,
+# no geo-blocking, no auth needed. See:
+# https://developers.binance.com/docs/binance-spot-api-docs/faqs/market_data_only
+BINANCE_EXCHANGE_INFO_URL = "https://data-api.binance.vision/api/v3/exchangeInfo"
 BINANCE_QUOTE_ASSETS_OF_INTEREST = {"USDT", "USDC", "BTC"}
 HTTP_TIMEOUT = 15
 
@@ -105,5 +112,4 @@ def main() -> None:
     print(f"[done] tracked {len(current)} symbols")
 
 
-if __name__ == "__main__":
-    main()
+if __name
