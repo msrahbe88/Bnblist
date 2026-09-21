@@ -112,4 +112,7 @@ def main() -> None:
     print(f"[done] tracked {len(current)} symbols")
 
 
-if __name
+if __name__ == "__main__":
+    main()
+
+
