@@ -26,14 +26,24 @@ the way their main web API does. That said:
     was for the Binance geo-block.
 
 Each run:
-  1. Loads previously-seen topic words from douyin_state.json.
+  1. Loads the previous run's trending board from douyin_state.json.
   2. Fetches the current trending list.
-  3. Alerts (via ntfy.sh) on any topic word not seen before.
-  4. Saves the updated set of seen words back to douyin_state.json.
+  3. Alerts (via ntfy.sh) on any topic word that's on the board now but
+     wasn't on it last run.
+  4. Saves the current board back to douyin_state.json, replacing the
+     old one, so next run compares against *this* run, not history.
 
 On the very first run ever, it seeds the state without alerting --
 otherwise it would fire ~50 notifications for the entire existing
 board at once.
+
+IMPORTANT: this compares against only the immediately previous run,
+not everything ever seen. Douyin's board is dominated by a fairly
+small pool of recurring topics, so comparing against full history
+means almost nothing ever looks "new" after the first run -- the bot
+would go quiet forever. Comparing against just the last snapshot means
+a topic that drops off the board and later comes back will alert
+again, which is the intended, more useful behavior here.
 """
 
 import json
@@ -77,7 +87,7 @@ def load_state() -> dict:
             return json.loads(STATE_FILE.read_text())
         except (json.JSONDecodeError, OSError):
             print("[state] state file unreadable, starting fresh")
-    return {"seen_words": []}
+    return {"previous_words": []}
 
 
 def save_state(state: dict) -> None:
@@ -85,6 +95,8 @@ def save_state(state: dict) -> None:
 
 
 def get_trending_words() -> list:
+    """Returns a list of {"word": ..., "hot_value": ...} currently on
+    Douyin's trending board, highest heat first."""
     resp = requests.get(DOUYIN_HOT_SEARCH_URL, headers=HEADERS, timeout=HTTP_TIMEOUT)
     resp.raise_for_status()
     data = resp.json()
@@ -100,9 +112,9 @@ def get_trending_words() -> list:
 
 def main() -> None:
     first_run = not STATE_FILE.exists()
-                                                                    
+
     state = load_state()
-    seen_words = set(state.get("seen_words", []))
+    previous_words = set(state.get("previous_words", []))
 
     current = get_trending_words()
     current_words = {item["word"] for item in current}
@@ -110,7 +122,7 @@ def main() -> None:
     if first_run:
         print(f"[first run] seeding state with {len(current_words)} trending topics, no alerts sent")
     else:
-        new_words = current_words - seen_words
+        new_words = current_words - previous_words
         for item in current:
             if item["word"] in new_words:
                 hot_value = item.get("hot_value")
@@ -120,9 +132,12 @@ def main() -> None:
                     f"{item['word']}{hot_str} just entered Douyin's trending board.",
                 )
 
-    state["seen_words"] = sorted(seen_words | current_words)
+    # Replace last run's board with this run's board -- we only ever
+    # compare against the immediately previous snapshot, not all-time
+    # history. See the module docstring for why.
+    state["previous_words"] = sorted(current_words)
     save_state(state)
-    print(f"[done] tracked {len(state['seen_words'])} total words, {len(current_words)} currently trending")
+    print(f"[done] {len(current_words)} words on the board this run")
 
 
 if __name__ == "__main__":
