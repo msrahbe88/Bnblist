@@ -1,0 +1,47 @@
+name: Solana Scanner
+
+on:
+  schedule:
+    # Every 5 minutes. GitHub may delay this under load — treat it as
+    # "at least every 5 min", not exact.
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab
+
+# Prevent overlapping runs if one invocation takes longer than 5 minutes
+concurrency:
+  group: solana-scanner
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # needed so the workflow can commit state files back
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run scanner (single pass)
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          # Uncomment / add any other CONFIG overrides here, e.g.:
+          # MIN_LIQUIDITY_USD: "10000"
+          # MIN_LP_LOCKED_PCT: "95"
+        run: python solana_scanner.py --once
+
+      - name: Commit updated state files
+        run: |
+          git config user.name "solana-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add seen_tokens.json pending_tokens.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Update scanner state [skip ci]"
+          git push
