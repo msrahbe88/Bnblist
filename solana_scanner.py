@@ -373,7 +373,46 @@ def main():
     args = parser.parse_args()
 
     log.info(
-        "Starting Solana scanner. Liquidity >= $%.0f, LP locked >= %.0f%%, "
-        "rescan every %ds for up to %dh",
-        CONFIG["MIN_LIQUIDITY_USD"], CONFIG["MIN_LP_LOCKED_PCT"],
-        CONFIG["RESCAN_INTERVAL_SEC"], CONFIG["MAX_RESCAN_WINDOW_SEC"]
+        "Starting Solana scanner. Liquidity threshold %.0f USD, LP locked threshold %.0f pct, "
+        "rescan interval %ds, max rescan window %dh",
+        CONFIG["MIN_LIQUIDITY_USD"],
+        CONFIG["MIN_LP_LOCKED_PCT"],
+        CONFIG["RESCAN_INTERVAL_SEC"],
+        CONFIG["MAX_RESCAN_WINDOW_SEC"] // 3600,
+    )
+    if CONFIG["NTFY_TOPIC"] == "your-ntfy-topic-here":
+        log.warning("Set NTFY_TOPIC (env var or in CONFIG) before running for real.")
+
+    seen = SeenStore(CONFIG["SEEN_FILE"])
+    pending = PendingStore(CONFIG["PENDING_FILE"])
+
+    if args.once:
+        run_once(seen, pending, time.time())
+        return
+
+    # Long-running local mode
+    last_poll = 0.0
+    while True:
+        now = time.time()
+        try:
+            if now - last_poll >= CONFIG["POLL_INTERVAL_SEC"]:
+                last_poll = now
+                candidates = fetch_new_solana_tokens()
+                log.debug("Fetched %d candidate tokens", len(candidates))
+                for c in candidates:
+                    mint = c["mint"]
+                    if seen.has(mint):
+                        continue
+                    seen.add(mint)
+                    evaluate_token(mint, pending, now)
+
+            process_pending(pending, now)
+
+        except Exception as e:
+            log.exception("Unexpected error in main loop: %s", e)
+
+        time.sleep(CONFIG["TICK_SEC"])
+
+
+if __name__ == "__main__":
+    main()
