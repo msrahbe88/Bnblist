@@ -97,7 +97,8 @@ def send_ntfy(title: str, message: str, tags: str = "seedling", priority: str = 
         print(f"[ntfy] failed to send notification: {e}")
 
 
-def load_state() -> dict:    if STATE_FILE.exists():
+def load_state() -> dict:
+  if STATE_FILE.exists():
         try:
             return json.loads(STATE_FILE.read_text())
         except (json.JSONDecodeError, OSError):
