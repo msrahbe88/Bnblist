@@ -7849,6 +7849,21 @@
       "status": "TRADING",
       "base": "RDDTB",
       "quote": "USDT"
+    },
+    "AGPUBUSDT": {
+      "status": "TRADING",
+      "base": "AGPUB",
+      "quote": "USDT"
+    },
+    "AMCBUSDT": {
+      "status": "TRADING",
+      "base": "AMCB",
+      "quote": "USDT"
+    },
+    "CYPHBUSDT": {
+      "status": "TRADING",
+      "base": "CYPHB",
+      "quote": "USDT"
     }
   }
 }
