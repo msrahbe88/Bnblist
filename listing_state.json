@@ -7864,6 +7864,16 @@
       "status": "TRADING",
       "base": "CYPHB",
       "quote": "USDT"
+    },
+    "HYPEUSDC": {
+      "status": "TRADING",
+      "base": "HYPE",
+      "quote": "USDC"
+    },
+    "HYPEUSDT": {
+      "status": "TRADING",
+      "base": "HYPE",
+      "quote": "USDT"
     }
   }
 }
