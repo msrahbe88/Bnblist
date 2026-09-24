@@ -3581,7 +3581,7 @@
       "quote": "USDT"
     },
     "USDPUSDT": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "USDP",
       "quote": "USDT"
     },
