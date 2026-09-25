@@ -5296,7 +5296,7 @@
       "quote": "USDC"
     },
     "TNSRUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "TNSR",
       "quote": "USDC"
     },
@@ -5816,7 +5816,7 @@
       "quote": "USDT"
     },
     "AIXBTUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "AIXBT",
       "quote": "USDC"
     },
@@ -6361,7 +6361,7 @@
       "quote": "USDC"
     },
     "ENJUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "ENJ",
       "quote": "USDC"
     },
@@ -6391,7 +6391,7 @@
       "quote": "USDT"
     },
     "SXTUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "SXT",
       "quote": "USDC"
     },
@@ -6441,7 +6441,7 @@
       "quote": "USDT"
     },
     "HUMAUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "HUMA",
       "quote": "USDC"
     },
@@ -6711,7 +6711,7 @@
       "quote": "USDT"
     },
     "DOLOUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "DOLO",
       "quote": "USDC"
     },
@@ -7036,7 +7036,7 @@
       "quote": "USDT"
     },
     "TURTLEUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "TURTLE",
       "quote": "USDC"
     },
