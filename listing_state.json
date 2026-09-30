@@ -7874,6 +7874,41 @@
       "status": "TRADING",
       "base": "HYPE",
       "quote": "USDT"
+    },
+    "ADBEBUSDT": {
+      "status": "TRADING",
+      "base": "ADBEB",
+      "quote": "USDT"
+    },
+    "FWDIBUSDT": {
+      "status": "TRADING",
+      "base": "FWDIB",
+      "quote": "USDT"
+    },
+    "HPEBUSDT": {
+      "status": "TRADING",
+      "base": "HPEB",
+      "quote": "USDT"
+    },
+    "PDDBUSDT": {
+      "status": "TRADING",
+      "base": "PDDB",
+      "quote": "USDT"
+    },
+    "SHAZBUSDT": {
+      "status": "TRADING",
+      "base": "SHAZB",
+      "quote": "USDT"
+    },
+    "WENBUSDT": {
+      "status": "TRADING",
+      "base": "WENB",
+      "quote": "USDT"
+    },
+    "ZMBUSDT": {
+      "status": "TRADING",
+      "base": "ZMB",
+      "quote": "USDT"
     }
   }
 }
