@@ -6146,7 +6146,7 @@
       "quote": "USDC"
     },
     "VANAUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "VANA",
       "quote": "USDC"
     },
@@ -6216,7 +6216,7 @@
       "quote": "USDC"
     },
     "AUCTIONUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "AUCTION",
       "quote": "USDC"
     },
