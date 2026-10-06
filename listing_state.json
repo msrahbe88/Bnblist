@@ -4271,7 +4271,7 @@
       "quote": "BTC"
     },
     "STGUSDT": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "STG",
       "quote": "USDT"
     },
