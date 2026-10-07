@@ -7909,6 +7909,26 @@
       "status": "TRADING",
       "base": "ZMB",
       "quote": "USDT"
+    },
+    "USDEBUSDT": {
+      "status": "TRADING",
+      "base": "USDEB",
+      "quote": "USDT"
+    },
+    "SECZBUSDT": {
+      "status": "TRADING",
+      "base": "SECZB",
+      "quote": "USDT"
+    },
+    "LLYBUSDT": {
+      "status": "TRADING",
+      "base": "LLYB",
+      "quote": "USDT"
+    },
+    "JPMBUSDT": {
+      "status": "TRADING",
+      "base": "JPMB",
+      "quote": "USDT"
     }
   }
 }
