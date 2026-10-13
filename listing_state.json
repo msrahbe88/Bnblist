@@ -7929,6 +7929,11 @@
       "status": "TRADING",
       "base": "JPMB",
       "quote": "USDT"
+    },
+    "RWUSDUSDT": {
+      "status": "TRADING",
+      "base": "RWUSD",
+      "quote": "USDT"
     }
   }
 }
