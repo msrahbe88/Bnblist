@@ -7934,6 +7934,26 @@
       "status": "TRADING",
       "base": "RWUSD",
       "quote": "USDT"
+    },
+    "BBBUSDT": {
+      "status": "TRADING",
+      "base": "BBB",
+      "quote": "USDT"
+    },
+    "MDBBUSDT": {
+      "status": "TRADING",
+      "base": "MDBB",
+      "quote": "USDT"
+    },
+    "PENGBUSDT": {
+      "status": "TRADING",
+      "base": "PENGB",
+      "quote": "USDT"
+    },
+    "UVXYBUSDT": {
+      "status": "TRADING",
+      "base": "UVXYB",
+      "quote": "USDT"
     }
   }
 }
