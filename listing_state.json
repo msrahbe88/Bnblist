@@ -7954,6 +7954,31 @@
       "status": "TRADING",
       "base": "UVXYB",
       "quote": "USDT"
+    },
+    "BOTBUSDT": {
+      "status": "TRADING",
+      "base": "BOTB",
+      "quote": "USDT"
+    },
+    "KSTRBUSDT": {
+      "status": "TRADING",
+      "base": "KSTRB",
+      "quote": "USDT"
+    },
+    "TMFBUSDT": {
+      "status": "TRADING",
+      "base": "TMFB",
+      "quote": "USDT"
+    },
+    "VSTBUSDT": {
+      "status": "TRADING",
+      "base": "VSTB",
+      "quote": "USDT"
+    },
+    "BRKBBUSDT": {
+      "status": "TRADING",
+      "base": "BRKBB",
+      "quote": "USDT"
     }
   }
 }
