@@ -7979,6 +7979,31 @@
       "status": "TRADING",
       "base": "BRKBB",
       "quote": "USDT"
+    },
+    "APPBUSDT": {
+      "status": "TRADING",
+      "base": "APPB",
+      "quote": "USDT"
+    },
+    "BSPBUSDT": {
+      "status": "TRADING",
+      "base": "BSPB",
+      "quote": "USDT"
+    },
+    "GEVBUSDT": {
+      "status": "TRADING",
+      "base": "GEVB",
+      "quote": "USDT"
+    },
+    "SKDDBUSDT": {
+      "status": "TRADING",
+      "base": "SKDDB",
+      "quote": "USDT"
+    },
+    "SKUUBUSDT": {
+      "status": "TRADING",
+      "base": "SKUUB",
+      "quote": "USDT"
     }
   }
 }
