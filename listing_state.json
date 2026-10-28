@@ -3476,7 +3476,7 @@
       "quote": "USDT"
     },
     "QUICKUSDT": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "QUICK",
       "quote": "USDT"
     },
@@ -6056,7 +6056,7 @@
       "quote": "USDC"
     },
     "EPICUSDT": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "EPIC",
       "quote": "USDT"
     },
@@ -6066,7 +6066,7 @@
       "quote": "USDC"
     },
     "EPICUSDC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "EPIC",
       "quote": "USDC"
     },
