@@ -156,7 +156,7 @@
       "quote": "BTC"
     },
     "ETCBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "ETC",
       "quote": "BTC"
     },
@@ -191,7 +191,7 @@
       "quote": "BTC"
     },
     "DASHBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "DASH",
       "quote": "BTC"
     },
@@ -696,7 +696,7 @@
       "quote": "BTC"
     },
     "THETABTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "THETA",
       "quote": "BTC"
     },
@@ -1116,7 +1116,7 @@
       "quote": "USDT"
     },
     "ATOMBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "ATOM",
       "quote": "BTC"
     },
@@ -1461,7 +1461,7 @@
       "quote": "USDT"
     },
     "XTZBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "XTZ",
       "quote": "BTC"
     },
@@ -2521,7 +2521,7 @@
       "quote": "BTC"
     },
     "AAVEBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "AAVE",
       "quote": "BTC"
     },
@@ -2966,7 +2966,7 @@
       "quote": "BTC"
     },
     "CAKEBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "CAKE",
       "quote": "BTC"
     },
@@ -3226,7 +3226,7 @@
       "quote": "USDT"
     },
     "ICPBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "ICP",
       "quote": "BTC"
     },
@@ -4571,7 +4571,7 @@
       "quote": "USDT"
     },
     "PENDLEBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "PENDLE",
       "quote": "BTC"
     },
@@ -5151,7 +5151,7 @@
       "quote": "USDC"
     },
     "TAOBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "TAO",
       "quote": "BTC"
     },
@@ -5371,7 +5371,7 @@
       "quote": "USDT"
     },
     "RENDERBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "RENDER",
       "quote": "BTC"
     },
@@ -7351,7 +7351,7 @@
       "quote": "USDC"
     },
     "XAUTBTC": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "XAUT",
       "quote": "BTC"
     },
