@@ -5741,7 +5741,7 @@
       "quote": "USDC"
     },
     "VELODROMEUSDT": {
-      "status": "TRADING",
+      "status": "BREAK",
       "base": "VELODROME",
       "quote": "USDT"
     },
