@@ -8004,6 +8004,41 @@
       "status": "TRADING",
       "base": "SKUUB",
       "quote": "USDT"
+    },
+    "EWJBUSDT": {
+      "status": "TRADING",
+      "base": "EWJB",
+      "quote": "USDT"
+    },
+    "EWTBUSDT": {
+      "status": "TRADING",
+      "base": "EWTB",
+      "quote": "USDT"
+    },
+    "EWZBUSDT": {
+      "status": "TRADING",
+      "base": "EWZB",
+      "quote": "USDT"
+    },
+    "EWZSBUSDT": {
+      "status": "TRADING",
+      "base": "EWZSB",
+      "quote": "USDT"
+    },
+    "IWMBUSDT": {
+      "status": "TRADING",
+      "base": "IWMB",
+      "quote": "USDT"
+    },
+    "MELIBUSDT": {
+      "status": "TRADING",
+      "base": "MELIB",
+      "quote": "USDT"
+    },
+    "NUBUSDT": {
+      "status": "TRADING",
+      "base": "NUB",
+      "quote": "USDT"
     }
   }
 }
