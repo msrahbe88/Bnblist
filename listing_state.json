@@ -8039,6 +8039,11 @@
       "status": "TRADING",
       "base": "NUB",
       "quote": "USDT"
+    },
+    "ANTBUSDT": {
+      "status": "TRADING",
+      "base": "ANTB",
+      "quote": "USDT"
     }
   }
 }
