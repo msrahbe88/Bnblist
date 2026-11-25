@@ -8044,6 +8044,31 @@
       "status": "TRADING",
       "base": "ANTB",
       "quote": "USDT"
+    },
+    "ARTYBUSDT": {
+      "status": "TRADING",
+      "base": "ARTYB",
+      "quote": "USDT"
+    },
+    "FRHCBUSDT": {
+      "status": "TRADING",
+      "base": "FRHCB",
+      "quote": "USDT"
+    },
+    "IBITBUSDT": {
+      "status": "TRADING",
+      "base": "IBITB",
+      "quote": "USDT"
+    },
+    "IGVBUSDT": {
+      "status": "TRADING",
+      "base": "IGVB",
+      "quote": "USDT"
+    },
+    "SOXXBUSDT": {
+      "status": "TRADING",
+      "base": "SOXXB",
+      "quote": "USDT"
     }
   }
 }
